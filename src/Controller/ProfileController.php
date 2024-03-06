@@ -57,13 +57,13 @@ class ProfileController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $file = $form->get('profilePicture')->getData();
+            $file = $form->get('picture')->getData();
             $path =  uniqid('') .'.'. $file->guessClientExtension();
             $file->move(
                 'images',
                 $path
             );
-            $user->setProfilePicture($path);
+            $user->setPicture($path);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_profile_index', [], Response::HTTP_SEE_OTHER);

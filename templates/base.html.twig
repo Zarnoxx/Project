@@ -8,10 +8,10 @@
     <body>
         <header>
             <a href="/">Homepage</a>
-            <a href="/profilePage">Profile</a>
             <a href="/register">Register</a>
             <a href="/login">Login</a>
             {% if app.user %}
+            <a href="/profilePage/{{app.user.id}}">Profile</a>
             <div class="mx-auto w-4/5 my-8">
                 <a href="/game">
                     Create New Game

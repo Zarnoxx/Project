@@ -16,7 +16,7 @@ class UserType extends AbstractType
         $builder
             ->add('username')
             ->add('password')
-            ->add('profilePicture', FileType::class, ['constraints' => [
+            ->add('picture', FileType::class, ['constraints' => [
                 new File([
                     'maxSize' => '10240000k',
                     'mimeTypes' => [

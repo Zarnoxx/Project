@@ -14,9 +14,9 @@ class GameType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('GameName')
-            ->add('Link')
-            ->add('Thumbnail', FileType::class, ['constraints' => [
+            ->add('title')
+            ->add('link')
+            ->add('thumbnail', FileType::class, ['constraints' => [
                 new File([
                     'maxSize' => '10240000k',
                     'mimeTypes' => [
