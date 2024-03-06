@@ -30,13 +30,16 @@ class GameController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $file = $form->get('picture')->getData();
+            $file = $form->get('thumbnail')->getData();
             $path =  uniqid('') .'.'. $file->guessClientExtension();
             $file->move(
                 'images',
                 $path
             );
             $game->setThumbnail($path);
+            $random = base64_encode($game->getTitle() . $game->getThumbnail());
+            $game->setApikey($random);
+            $game->setUser($this->getUser());
             $entityManager->persist($game);
             $entityManager->flush();
 

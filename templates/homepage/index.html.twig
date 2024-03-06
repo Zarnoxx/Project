@@ -5,11 +5,12 @@
 {% block body %}
     {% if app.user %}
         {% for game in games %}
-            <li><a href="{{ game.link }}?userId={{ app.user.id }}&hash={{ game.hash(app.user) }}">{{ game.name }}</a></li>
+            <img src="images/{{game.thumbnail}}" width="250px">
+            <li><a href="{{ game.link }}?userId={{ app.user.id }}&hash={{ game.hash(app.user) }}">{{ game.title }}</a></li>
         {% endfor %}
     {% else %}
         {% for game in games %}
-            <li><a href="/login">{{ game.name }}</a></li>
+            <li><a href="/login">{{ game.title }}</a></li>
         {% endfor %}
     {% endif %}
 {% endblock %}

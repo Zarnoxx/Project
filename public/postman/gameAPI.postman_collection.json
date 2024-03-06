@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "803021e8-f3cc-44ee-8ac7-7a570257bebd",
+		"name": "gameAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30541666"
+	},
+	"item": [
+		{
+			"name": "userInfo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://108464.cvoatweb.be/api/user",
+					"protocol": "https",
+					"host": [
+						"108464",
+						"cvoatweb",
+						"be"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "score",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"link\": \"google.com\",\r\n    \"userid\": \"1\",\r\n    \"hash\": \"ef1be4f2f296ed01fa5b120f5be93947\",\r\n    \"points\": \"10\",\r\n    \"time\": \"10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://108464.cvoatweb.be/api/score",
+					"protocol": "https",
+					"host": [
+						"108464",
+						"cvoatweb",
+						"be"
+					],
+					"path": [
+						"api",
+						"score"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "achievement",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"link\": \"google.com\",\r\n    \"userid\": \"1\",\r\n    \"hash\": \"ef1be4f2f296ed01fa5b120f5be93947\",\r\n    \"achievement\": \"placeholder\",\r\n    \"image\": \"placeholder.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://108464.cvoatweb.be/api/achievement",
+					"protocol": "https",
+					"host": [
+						"108464",
+						"cvoatweb",
+						"be"
+					],
+					"path": [
+						"api",
+						"achievement"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -34,6 +34,9 @@ class Game
     #[ORM\OneToMany(targetEntity: Score::class, mappedBy: 'game')]
     private Collection $scores;
 
+    #[ORM\Column(length: 255)]
+    private ?string $apiKey = null;
+
     public function __construct()
     {
         $this->achievements = new ArrayCollection();
@@ -149,6 +152,22 @@ class Game
                 $score->setGame(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getHash(User $user)   {
+        return md5($this->apiKey . $user->getId() . '1999');
+    }
+
+    public function getApiKey(): ?string
+    {
+        return $this->apiKey;
+    }
+
+    public function setApiKey(string $apiKey): static
+    {
+        $this->apiKey = $apiKey;
 
         return $this;
     }
